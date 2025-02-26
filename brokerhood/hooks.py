@@ -121,7 +121,7 @@ app_license = "mit"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+# 	"Vehicle": "brokerhood.api.get_query_conditions_for_vehicle",
 # }
 #
 # has_permission = {
@@ -141,33 +141,21 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"ToDo": {
+#         "before_insert":"brokerhood.api.throw_emoji"
 # 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"brokerhood.tasks.all"
-# 	],
-# 	"daily": [
-# 		"brokerhood.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"brokerhood.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"brokerhood.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"brokerhood.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "cron": {  # "cron" should be lowercase
+        "30 15 * * 3": [
+            "brokerhood.api.send_payment_remainders"
+        ]
+    }
+}
 
 # Testing
 # -------

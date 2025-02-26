@@ -40,6 +40,7 @@
    "fieldname": "vehicle",
    "fieldtype": "Link",
    "label": "Vehicle",
+   "link_filters": "[[\"Vehicle\",\"year\",\"=\",2017]]",
    "options": "Vehicle"
   },
   {
@@ -63,7 +64,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 11:16:32.101693",
+ "modified": "2025-02-26 11:21:55.975048",
  "modified_by": "Administrator",
  "module": "TestModule",
  "name": "Ride Order",
